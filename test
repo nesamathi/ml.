@@ -1,0 +1,79 @@
+git clone https://github.com/sohzm/cheating-daddy
+cd cheating-daddy
+/src/frontend
+npx create-react-app frontend
+cheating-daddy/
+   ├── frontend/   (React app)
+   ├── main.js     (Electron)
+   └── package.json
+const { app, BrowserWindow } = require('electron');
+const path = require("path");
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 1000,
+    height: 700,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+    },
+  });
+
+  win.loadURL("http://localhost:3000");
+}
+
+app.whenReady().then(() => {
+  createWindow();
+});
+cd frontend
+npm start
+npm start
+import { useState } from "react";
+
+function App() {
+  const [text, setText] = useState("");
+
+  return (
+    <div style={{ padding: "40px", fontFamily: "Arial" }}>
+      <h1>Arakoo React + Electron App</h1>
+
+      <input
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        placeholder="Type something"
+        style={{
+          padding: "10px",
+          width: "300px",
+          marginRight: "10px",
+        }}
+      />
+
+      <button
+        style={{
+          padding: "10px 20px",
+          background: "blue",
+          color: "white",
+          border: "none",
+          borderRadius: "4px",
+        }}
+        onClick={() => alert("You typed: " + text)}
+      >
+        Show Text
+      </button>
+    </div>
+  );
+}
+
+export default App;
+npm run build
+npm run dist
+Hi, this is my submission for Arakoo AI/ML developer assignment.
+
+1. I cloned the cheating-daddy repo.
+2. I replaced the LIT frontend with a new ReactJS frontend.
+3. I integrated the React frontend with ElectronJS.
+4. I tested it and built the desktop app for Windows.
+5. This is my GitHub repo link. Thank you.
+git add .
+git commit -m "Converted LIT frontend to React"
+git push
+
